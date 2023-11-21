@@ -18,10 +18,21 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #121517;
+}
+
+input[type="text"]:focus ~ .input-text,
+input[type="password"]:focus ~ .input-text,
+input[type="email"]:focus ~ .input-text {
+  @apply text-blue-500;
+  background: linear-gradient(to bottom, #1e1f25, #121517);
+}
+
+input::placeholder {
+  color: #363647; /* Color del texto del placeholder */
+  font-style: inherit; /* Estilo de fuente del placeholder, por ejemplo, cursiva */
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
