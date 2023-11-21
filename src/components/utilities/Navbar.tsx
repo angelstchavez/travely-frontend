@@ -20,9 +20,6 @@ const Navbar = () => {
           <Link href="/about" className="hover:text-primary duration-200">
             Acerca de
           </Link>
-          <Link href="#" className=" hover:text-primary duration-150">
-            Servicios
-          </Link>
           <Link href="/contact" className=" hover:text-primary">
             Contacto
           </Link>
