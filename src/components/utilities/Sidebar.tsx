@@ -35,10 +35,10 @@ const Sidebar = () => {
           <ul>
             <li>
               <Link
-                href="/"
+                href="/dashboard/home"
                 className="flex items-center py-2 px-4  gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
               >
-                <RiBarChart2Line className="text-primary" /> Analytic
+                <RiBarChart2Line className="text-primary" /> Inicio
               </Link>
             </li>
 
@@ -59,7 +59,7 @@ const Sidebar = () => {
 
               <ul
                 className={`text-gray-400 ${
-                  showSubMenu ? "h-[100px]" : "h-0"
+                  showSubMenu ? "h-[250px]" : "h-0"
                 } overflow-hidden transition-all`}
                 // className={`my-2 text-gray-400 ${!showSubMenu && "hidden"}`}
               >
@@ -94,6 +94,28 @@ const Sidebar = () => {
                                     "
                   >
                     Clientes
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/dashboard/employees"
+                    className=" py-2 px-4 border-l border-gray-500 ml-6 block
+                                    relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
+                                    before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
+                                    "
+                  >
+                    Empleados
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/dashboard/users"
+                    className=" py-2 px-4 border-l border-gray-500 ml-6 block
+                                    relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
+                                    before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
+                                    "
+                  >
+                    Usuarios
                   </Link>
                 </li>
                 <li>

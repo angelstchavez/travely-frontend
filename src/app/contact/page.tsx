@@ -1,5 +1,15 @@
+import ContactForm from "@/components/utilities/ContactForm";
+import Footer from "@/components/utilities/Footer";
+import Navbar from "@/components/utilities/Navbar";
+
 function contactPage() {
-  return <div>contactPage</div>;
+  return (
+    <>
+      <Navbar></Navbar>
+      <ContactForm></ContactForm>
+      <Footer></Footer>
+    </>
+  );
 }
 
 export default contactPage;
