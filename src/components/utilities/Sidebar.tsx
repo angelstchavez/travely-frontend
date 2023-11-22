@@ -36,7 +36,7 @@ const Sidebar = () => {
             <li>
               <Link
                 href="/dashboard/home"
-                className="flex items-center py-2 px-4  gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
+                className="flex items-center py-4 px-4  gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
               >
                 <RiBarChart2Line className="text-primary" /> Inicio
               </Link>
@@ -45,7 +45,7 @@ const Sidebar = () => {
             <li>
               <button
                 onClick={() => setShowSubMenu(!showSubMenu)}
-                className="w-full flex items-center py-2 px-4 gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
+                className="w-full flex items-center py-4 px-4 gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
               >
                 <span className="flex items-center gap-4">
                   <RiEarthLine className="text-primary" /> Administrar
@@ -59,14 +59,25 @@ const Sidebar = () => {
 
               <ul
                 className={`text-gray-400 ${
-                  showSubMenu ? "h-[250px]" : "h-0"
+                  showSubMenu ? "h-[280px]" : "h-0"
                 } overflow-hidden transition-all`}
                 // className={`my-2 text-gray-400 ${!showSubMenu && "hidden"}`}
               >
                 <li>
                   <Link
+                    href="/dashboard/offices"
+                    className=" py-3 px-4 border-l border-gray-500 ml-6 block
+                                    relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
+                                    before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
+                                    "
+                  >
+                    Ventas
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/dashboard/vehicles"
-                    className=" py-2 px-4 border-l border-gray-500 ml-6 block
+                    className=" py-3 px-4 border-l border-gray-500 ml-6 block
                                     relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
                                     before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
                                     "
@@ -77,7 +88,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     href="/dashboard/offices"
-                    className=" py-2 px-4 border-l border-gray-500 ml-6 block
+                    className=" py-3 px-4 border-l border-gray-500 ml-6 block
                                     relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
                                     before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
                                     "
@@ -88,7 +99,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     href="/dashboard/customers"
-                    className=" py-2 px-4 border-l border-gray-500 ml-6 block
+                    className=" py-3 px-4 border-l border-gray-500 ml-6 block
                                     relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
                                     before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
                                     "
@@ -99,7 +110,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     href="/dashboard/employees"
-                    className=" py-2 px-4 border-l border-gray-500 ml-6 block
+                    className=" py-3 px-4 border-l border-gray-500 ml-6 block
                                     relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
                                     before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
                                     "
@@ -110,7 +121,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     href="/dashboard/users"
-                    className=" py-2 px-4 border-l border-gray-500 ml-6 block
+                    className=" py-3 px-4 border-l border-gray-500 ml-6 block
                                     relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
                                     before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
                                     "
@@ -120,19 +131,8 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <Link
-                    href="/dashboard/register_vehicle"
-                    className="px-4 border-l border-gray-500 ml-6 block
-                                    relative before:absolute before:w-3 before:h-3 before:bg-gray-500 before:rounded-full
-                                    before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100  hover:text-white transition-colors
-                                    "
-                  >
-                    Estadisticas
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/"
-                    className="py-2 px-4 border-l border-gray-500 ml-6 block
+                    className="py-3 px-4 border-l border-gray-500 ml-6 block
                                     relative before:absolute before:w-3 before:h-3 before:bg-gray-500 before:rounded-full
                                     before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100  hover:text-white transition-colors
                                     "
@@ -145,19 +145,10 @@ const Sidebar = () => {
 
             <li>
               <Link
-                href="/"
-                className="flex items-center py-2 px-4 gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
+                href="/dashboard/config"
+                className="flex items-center py-4 px-4 gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
               >
-                <RiMessage2Line className="text-primary" /> Mensajes
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/"
-                className="flex items-center py-2 px-4 gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
-              >
-                <RiCalendarTodoLine className="text-primary" /> Calendario
+                <RiMessage2Line className="text-primary" /> Configuración
               </Link>
             </li>
           </ul>
@@ -174,13 +165,12 @@ const Sidebar = () => {
           <Link
             href="/login"
             onClick={() => signOut()}
-            className="flex items-center py-2 px-4  gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
+            className="flex items-center py-4 px-4  gap-4 rounded-lg hover:bg-secondary-900 transition-colors"
           >
             <RiLogoutCircleLine className="text-primary" /> Cerrar Sesion
           </Link>
         </nav>
       </div>
-
       <button
         onClick={() => setShowMenu(!showMenu)}
         className="xl:hidden fixed right-4 bottom-4 bg-primary rounded-full text-black p-3 z-50"

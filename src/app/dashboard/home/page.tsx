@@ -50,7 +50,6 @@ const HomePage = () => {
 
   return (
     <DashboardPage>
-      Hola
       <BoxReport ventas={email} clientes={role} />
     </DashboardPage>
   );
