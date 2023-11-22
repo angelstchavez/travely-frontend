@@ -51,7 +51,7 @@ const vehicleReport = () => {
 
   return (
     <button
-      className="flex items-center rounded-lg bg-primary  px-1 py-2 m-1 text-black hover:bg-primary/50 active:bg-primary/10"
+      className="flex items-center rounded-lg bg-primary  px-1 py-2 m-1 text-black hover:bg-primary/70 active:bg-primary/70"
       onClick={downloadPDF}
     >
       <VscFilePdf className="mr-2" />

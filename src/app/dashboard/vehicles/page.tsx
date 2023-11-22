@@ -7,13 +7,13 @@ import DashboardPage from "../page";
 function vehiclesPage() {
   return (
     <DashboardPage>
-      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+      <div className="bg-secondary-100 rounded-xl mb-3">
         <VehicleForm />
       </div>
-      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+      <div className="bg-secondary-100 p-4 rounded-xl mb-3">
         <VehicleTable />
       </div>
-      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+      <div className="bg-secondary-100 p-4 rounded-xl mb-3">
         <VehicleReport />
       </div>
     </DashboardPage>

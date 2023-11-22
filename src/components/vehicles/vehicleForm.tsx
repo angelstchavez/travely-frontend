@@ -20,7 +20,6 @@ interface FormularioState {
 }
 
 const vehicleForm = () => {
-
   const { data: session } = useSession();
   const [marcas, setMarcas] = useState<Marca[]>([]);
   const [errors, setErrors] = useState<string[]>([]);
@@ -94,10 +93,26 @@ const vehicleForm = () => {
     }));
   };
 
+  function generateYearOptions() {
+    const currentYear = new Date().getFullYear();
+    const startYear = 1990;
+    const years = [];
+
+    for (let year = currentYear; year >= startYear; year--) {
+      years.push(
+        <option key={year} value={year}>
+          {year}
+        </option>
+      );
+    }
+
+    return years;
+  }
+
   return (
     <>
-      <div className="bg-secondary-100 p-8 rounded-xl">
-        <h1 className="text-2xl text-gray-300 text-center uppercase tracking-[8px] font-bold">
+      <div className="bg-secondary-100 p-6 rounded-xl">
+        <h1 className="text-3xl text-gray-300 text-center uppercase tracking-[8px] font-bold">
           Registrar <span className="text-primary">Vehiculos</span>{" "}
         </h1>
         <hr className="my-5 border-gray-400" />
@@ -170,18 +185,18 @@ const vehicleForm = () => {
 
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Año de fabricación
+                Año
               </label>
-              <input
-                type="text"
-                onChange={handleChange}
-                id="manufacturingYear"
-                name="manufacturingYear"
-                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
-                placeholder="2020"
-                value={formulario.manufacturingYear}
+              <select
+                id="year"
+                name="year"
+                className="px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500"
                 required
-              />
+                onChange={handleChange}
+                value={formulario.model}
+              >
+                {generateYearOptions()}
+              </select>
             </div>
 
             <div>
