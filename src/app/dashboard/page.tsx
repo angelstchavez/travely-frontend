@@ -2,13 +2,13 @@
 
 import Header from "@/components/utilities/Header";
 import Sidebar from "@/components/utilities/Sidebar";
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface Props {
-  children: React.ReactNode;
+  children?: ReactNode;
 }
 
-const DashboardPage = ({ children }: Props) => {
+const DashboardPage: React.FC<Props> = ({ children }) => {
   return (
     <>
       <div className="text-white min-h-screen grid grid-cols-1 xl:grid-cols-8 bg-secondary-900">
