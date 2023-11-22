@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
@@ -51,7 +52,11 @@ const CustomerReportBox = () => {
       icon={
         <RiTicketLine className="text-2xl bg-yellow-500/10 text-yellow-500 p-2 box-content rounded-xl" />
       }
-      title={<h1 className="text-yellow-500 text-2xl font-semibold">Clientes registrados</h1>}
+      title={
+        <h1 className="text-yellow-500 text-2xl font-semibold">
+          Clientes registrados
+        </h1>
+      }
     />
   );
 };
