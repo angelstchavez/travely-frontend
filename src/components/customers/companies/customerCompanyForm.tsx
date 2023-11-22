@@ -43,8 +43,20 @@ const CustomerCompanyForm = () => {
       setErrors(responseAPI.message);
       return;
     }
+    
+    clearForm();
 
     router.push("/dashboard/customers");
+  };
+
+  const clearForm = () => {
+    setCompany({
+      name: "",
+      nit: "",
+      contactNumber: "",
+      address: "",
+      isActive: true,
+    });
   };
 
   return (
@@ -146,9 +158,9 @@ const CustomerCompanyForm = () => {
               type="submit"
               className="bg-primary rounded-lg px-6 py-2 text-black font-semibold"
             >
-              Registrar empresa
+              Registrar
             </button>
-            <Toaster />
+            <Toaster theme="system" position="top-center" />
           </div>
         </form>
       </div>

@@ -3,8 +3,13 @@
 import DashboardPage from "../page";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import BoxReport from "@/components/utilities/BoxReport";
-
+import CustomerReportBox from "../../../components/utilities/reports/CustomersReportBox";
+import CustomerPersonReportBox from "../../../components/utilities/reports/customersPersonReportBox";
+import CustomerCompanyReportBox from "../../../components/utilities/reports/customersCompanyReportBox";
+import UserReportBox from "../../../components/utilities/reports/usersReportBox";
+import LoginReportBox from "../../../components/utilities/reports/loginReportBox";
+import OfficeReportBox from "../../../components/utilities/reports/officeReportBox";
+import VehicleReportBox from "../../../components/utilities/reports/vehiclesReportBox";
 interface User {
   email: string;
   role: string;
@@ -50,7 +55,17 @@ const HomePage = () => {
 
   return (
     <DashboardPage>
-      <BoxReport ventas={email} clientes={role} />
+      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+        <div className="grid gap-6 mb-6 grid-cols-1 md:grid-cols-4 xl:grid-cols-4 lg:grid-cols-3">
+          <CustomerReportBox></CustomerReportBox>
+          <CustomerPersonReportBox></CustomerPersonReportBox>
+          <CustomerCompanyReportBox></CustomerCompanyReportBox>
+          <UserReportBox></UserReportBox>
+          <LoginReportBox></LoginReportBox>
+          <OfficeReportBox></OfficeReportBox>
+          <VehicleReportBox></VehicleReportBox>
+        </div>
+      </div>
     </DashboardPage>
   );
 };

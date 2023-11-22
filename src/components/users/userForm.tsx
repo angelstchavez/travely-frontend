@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Dashboard from "@/app/dashboard/page";
+import { FcOk } from "react-icons/fc";
+import { Toaster, toast } from "sonner";
 
 const UserForm = () => {
   const router = useRouter();
@@ -43,7 +44,7 @@ const UserForm = () => {
       return;
     }
 
-    router.push("/dashboard/home");
+    //router.push("/dashboard/users");
   };
 
   return (
@@ -103,11 +104,18 @@ const UserForm = () => {
             </div>
             <div className="flex item-center">
               <button
+                onClick={() => {
+                  toast(`Usuario ${email} registrado exitosamente`, {
+                    description: "Gracias por usar Travely Manager",
+                    icon: <FcOk />,
+                  });
+                }}
                 type="submit"
-                className="bg-primary rounded-lg px-6 py-1 text-black font-semibold hover:bg-primary/50 active:bg-primary/10"
+                className="bg-primary rounded-lg px-6 py-2 text-black font-semibold"
               >
-                Crear usuario
+                Registrar
               </button>
+              <Toaster theme="system" position="top-center" />
             </div>
           </div>
         </form>
