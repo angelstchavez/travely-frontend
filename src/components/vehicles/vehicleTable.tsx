@@ -146,45 +146,49 @@ const vehicleTable = () => {
                 </tr>
               ))}
             </tbody>
-            <div className="mt-4 flex flex-col sm:flex-row items-center justify-between">
-              <div className="flex items-center gap-2">
-                <button
-                  className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5"
-                  onClick={() => table.setPageIndex(0)}
-                  disabled={!table.getCanPreviousPage()}
-                >
-                  {"Primera página"}
-                </button>
-                <button
-                  className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5 disabled:hover:bg-secondary-900 disabled:hover:text-white"
-                  onClick={() => table.previousPage()}
-                  disabled={!table.getCanPreviousPage()}
-                >
-                  {"Anterior"}
-                </button>
-                <button
-                  className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5"
-                  onClick={() => table.nextPage()}
-                  disabled={!table.getCanNextPage()}
-                >
-                  {"siguiente"}
-                </button>
-                <button
-                  className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5"
-                  onClick={() => table.setPageIndex(table.getPageCount() - 1)}
-                  disabled={!table.getCanNextPage()}
-                >
-                  {"Ultima página"}
-                </button>
-              </div>
-            </div>
           </table>
         ) : (
           <p>Cargando datos...</p>
         )}
+  
+        {list.length > 0 && (
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-between">
+            <div className="flex items-center gap-2">
+              <button
+                className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5"
+                onClick={() => table.setPageIndex(0)}
+                disabled={!table.getCanPreviousPage()}
+              >
+                {"Primera página"}
+              </button>
+              <button
+                className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5 disabled:hover:bg-secondary-900 disabled:hover:text-white"
+                onClick={() => table.previousPage()}
+                disabled={!table.getCanPreviousPage()}
+              >
+                {"Anterior"}
+              </button>
+              <button
+                className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5"
+                onClick={() => table.nextPage()}
+                disabled={!table.getCanNextPage()}
+              >
+                {"Siguiente"}
+              </button>
+              <button
+                className="text-gray-400 bg-secondary-900 py-1 px-3 rounded border border-secondary-900/5"
+                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+                disabled={!table.getCanNextPage()}
+              >
+                {"Ultima página"}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
+  
 };
 
 export default vehicleTable;
