@@ -14,7 +14,7 @@ const UserReport = () => {
   const downloadPDF = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/users/pdf/download`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/pdf/download`,
         {
           method: "GET",
           headers: {
@@ -47,7 +47,7 @@ const UserReport = () => {
 
   return (
     <button
-      className="flex items-end rounded-lg bg-primary px-2 py-3 text-black"
+      className="flex items-center rounded-lg bg-primary  px-1 py-2 m-1 text-black hover:bg-primary/50 active:bg-primary/10"
       onClick={downloadPDF}
     >
       <VscFilePdf className="mr-2" />
