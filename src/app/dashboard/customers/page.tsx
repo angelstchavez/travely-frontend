@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import DashboardPage from "../page";
 import CustomerForm from "@/components/customers/customerForm";
 import CustomerTable from "@/components/customers/customerTable";
-import CustomerReport from "@/components/customers/customerReport";
 import CustomerPersonForm from "@/components/customers/persons/customerPersonForm";
 import CustomerPersonTable from "@/components/customers/persons/customerPersonTable";
 import CustomerCompanyReport from "@/components/customers/companies/customerCompanyReport";
 import CustomerCompanyForm from "@/components/customers/companies/customerCompanyForm";
 import CustomerCompanyTable from "@/components/customers/companies/customerCompanyTable";
 import CustomerPersonReport from "@/components/customers/persons/customerPersonReport";
+import CustomerGeneralReport from "@/components/customers/customerGeneralReport";
 
 interface TabProps {
   form: React.ReactNode;
@@ -22,7 +22,7 @@ const tabs: Record<string, TabProps> = {
   general: {
     form: <CustomerForm />,
     table: <CustomerTable />,
-    report: <CustomerReport />,
+    report: <CustomerGeneralReport />,
   },
   personas: {
     form: <CustomerPersonForm />,

@@ -95,6 +95,7 @@ const UserForm = () => {
                 onChange={(event) => setRole(event.target.value)}
                 required
               >
+                <option value=""></option>
                 <option value="User">Usuario</option>
                 <option value="Admin">Administrador</option>
                 <option value="Manager">Jefe</option>
