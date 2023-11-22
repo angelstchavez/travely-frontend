@@ -10,13 +10,11 @@ interface Marca {
 }
 
 interface FormularioState {
-  registrationCard: string;
   plate: string;
-  model: string;
-  engineNumber: string;
-  manufacturingYear: number;
-  numberOfSeats: number;
+  reference: string;
+  model: number;
   brandId: string;
+  type: string;
 }
 
 const vehicleForm = () => {
@@ -74,13 +72,11 @@ const vehicleForm = () => {
   };
 
   const [formulario, setFormulario] = useState<FormularioState>({
-    registrationCard: "",
     plate: "",
-    model: "",
-    engineNumber: "",
-    manufacturingYear: 2020,
-    numberOfSeats: 5,
+    reference: "",
+    model: 0,
     brandId: "",
+    type: "",
   });
 
   const handleChange = (
@@ -109,6 +105,8 @@ const vehicleForm = () => {
     return years;
   }
 
+  
+
   return (
     <>
       <div className="bg-secondary-100 p-6 rounded-xl">
@@ -121,22 +119,6 @@ const vehicleForm = () => {
           <div className="grid gap-6 mb-6 md:grid-cols-3">
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Tarjeta de registro
-              </label>
-              <input
-                type="text"
-                onChange={handleChange}
-                id="registrationCard"
-                name="registrationCard"
-                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
-                placeholder="AB123CD"
-                value={formulario.registrationCard}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Placa
               </label>
               <input
@@ -144,9 +126,27 @@ const vehicleForm = () => {
                 onChange={handleChange}
                 id="plate"
                 name="plate"
-                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
+                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 uppercase"
                 placeholder="XYZ789"
                 value={formulario.plate}
+                required
+                maxLength={6}
+                pattern="[A-Za-z]{3}\d{3}"
+              />
+            </div>
+
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Referencia
+              </label>
+              <input
+                type="text"
+                onChange={handleChange}
+                id="reference"
+                name="reference"
+                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
+                placeholder="Land-cruiser txl"
+                value={formulario.reference}
                 required
               />
             </div>
@@ -155,64 +155,18 @@ const vehicleForm = () => {
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Modelo
               </label>
-              <input
-                type="text"
-                onChange={handleChange}
+              <select
                 id="model"
                 name="model"
-                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
-                placeholder="Transit 2022"
-                value={formulario.model}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Número de motor
-              </label>
-              <input
-                type="text"
-                onChange={handleChange}
-                id="engineNumber"
-                name="engineNumber"
-                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
-                placeholder="E123456789CAR4D"
-                value={formulario.engineNumber}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Año
-              </label>
-              <select
-                id="year"
-                name="year"
                 className="px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500"
                 required
                 onChange={handleChange}
                 value={formulario.model}
               >
+                <option value=""></option>
+
                 {generateYearOptions()}
               </select>
-            </div>
-
-            <div>
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Número de asientos
-              </label>
-              <input
-                type="text"
-                onChange={handleChange}
-                id="numberOfSeats"
-                name="numberOfSeats"
-                className=" px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
-                placeholder="5"
-                value={formulario.numberOfSeats}
-                required
-              />
             </div>
 
             <div>
@@ -227,6 +181,7 @@ const vehicleForm = () => {
                 onChange={handleChange}
                 value={formulario.brandId}
               >
+                <option value=""></option>
                 {marcas.map((marcas) => (
                   <option key={marcas.id} value={marcas.id}>
                     {marcas.name}
@@ -234,8 +189,29 @@ const vehicleForm = () => {
                 ))}
               </select>
             </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Tipo
+              </label>
+              <select
+                id="type"
+                name="type"
+                className="px-2 outline-none bg-secondary-900 py-2 rounded-lg border border-gray-600 w-full hover:border-gray-400 duration-200 focus:border-blue-500 "
+                required
+                onChange={handleChange}
+                value={formulario.type}
+              >
+                <option value=""></option>
+                <option value="Particular">Particular</option>
+                <option value="Minivan">Minivan</option>
+                <option value="Autobus">Autobus</option>
+              </select>
+            </div>
             <div className="flex item-center">
-              <button className="bg-primary rounded-lg px-6 py-2 text-black font-medium">
+              <button
+                type="submit"
+                className="bg-primary rounded-lg px-6 py-2 text-black font-medium hover:bg-primary/50 active:bg-primary/10"
+              >
                 <span className="text-xl font-semibold">Agregar vehiculo</span>
               </button>
             </div>

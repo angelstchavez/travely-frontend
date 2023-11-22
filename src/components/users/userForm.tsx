@@ -103,7 +103,7 @@ const UserForm = () => {
             <div className="flex item-center">
               <button
                 type="submit"
-                className="bg-primary rounded-lg px-6 py-1 text-black font-semibold"
+                className="bg-primary rounded-lg px-6 py-1 text-black font-semibold hover:bg-primary/50 active:bg-primary/10"
               >
                 Crear usuario
               </button>
