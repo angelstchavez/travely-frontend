@@ -1,5 +1,9 @@
-function customerPersonReport() {
-  return <div>customerPersonReport</div>;
-}
+import CustomerReport from "../customerReport";
 
-export default customerPersonReport;
+const CustomerPersonReport: React.FC = () => {
+  return (
+    <CustomerReport endpoint="/persons" label="Descargar reporte-personas" />
+  );
+};
+
+export default CustomerPersonReport;

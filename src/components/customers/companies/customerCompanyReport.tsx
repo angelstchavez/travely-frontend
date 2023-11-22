@@ -1,5 +1,9 @@
-function customerCompanyReport() {
-  return <div>customerCompanyReport</div>;
-}
+import CustomerReport from "../customerReport";
 
-export default customerCompanyReport;
+const CustomerCompanyReport: React.FC = () => {
+  return (
+    <CustomerReport endpoint="/companies" label="Descargar reporte-empresas" />
+  );
+};
+
+export default CustomerCompanyReport;
