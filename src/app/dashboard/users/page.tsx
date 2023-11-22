@@ -7,13 +7,13 @@ import UserReport from "../../../components/users/userReport";
 function usersPage() {
   return (
     <DashboardPage>
-      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+      <div className="bg-secondary-100 rounded-xl mb-3">
         <UserForm />
       </div>
-      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+      <div className="bg-secondary-100 p-4 rounded-xl mb-3">
         <UserTable />
       </div>
-      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+      <div className="bg-secondary-100 p-4 rounded-xl mb-3">
         <UserReport />
       </div>
     </DashboardPage>
