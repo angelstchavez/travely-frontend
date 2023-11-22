@@ -11,9 +11,9 @@ interface Props {
 const DashboardPage = ({ children }: Props) => {
   return (
     <>
-      <div className="text-white min-h-screen grid grid-cols-1 xl:grid-cols-6 bg-secondary-900">
+      <div className="text-white min-h-screen grid grid-cols-1 xl:grid-cols-8 bg-secondary-900">
         <Sidebar />
-        <div className="xl:col-span-5">
+        <div className="xl:col-span-7">
           <Header />
           <div className="h-[90vh] overflow-y-scroll p-8 bg-secondary-900">
             {children}

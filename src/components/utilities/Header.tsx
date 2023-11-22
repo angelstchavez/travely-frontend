@@ -14,13 +14,13 @@ const Header = () => {
 
   return (
     <header
-      className="h-[7vh] md:h-[10vh] border-b border-gray-400 p-8 flex
+      className="h-[7vh] md:h-[10vh] border-b border-gray-400 px-4 flex
           items-center justify-end "
     >
       <nav className="flex items-center gap-x-5">
         <Menu
           menuButton={
-            <MenuButton className="flex items-center gap-x-2.5 hover:bg-secondary-100 py-2.5 px-3 rounded-lg transition-colors ">
+            <MenuButton  className="flex items-center gap-x-2.5 hover:bg-secondary-100 py-2.5 px-3 rounded-lg transition-colors ">
               {/* Contenido */}
               <img
                 className="w-6 h-6 rounded-full object-cover"
