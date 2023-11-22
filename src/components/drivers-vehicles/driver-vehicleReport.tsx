@@ -5,7 +5,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { VscFilePdf } from "react-icons/vsc";
-const employeeReport = () => {
+const driver_vehicleReport = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { data: session } = useSession();
 
@@ -18,7 +18,7 @@ const employeeReport = () => {
   const downloadPDF = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/employees/pdf/download`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/drivers-vehicles/pdf/download`,
         {
           method: "GET",
           headers: {
@@ -33,7 +33,7 @@ const employeeReport = () => {
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement("a");
       link.href = url;
-      link.setAttribute("download", "informe-empleados.pdf");
+      link.setAttribute("download", "informe-asignacion de vehiculos.pdf");
 
       // Abrir el enlace en una nueva pestaña/ventana
       link.setAttribute("target", "_blank");
@@ -60,6 +60,5 @@ const employeeReport = () => {
   );
 };
 
-export default employeeReport;
-
+export default driver_vehicleReport;
 
