@@ -10,6 +10,7 @@ import UserReportBox from "../../../components/utilities/reports/usersReportBox"
 import LoginReportBox from "../../../components/utilities/reports/loginReportBox";
 import OfficeReportBox from "../../../components/utilities/reports/officeReportBox";
 import VehicleReportBox from "../../../components/utilities/reports/vehiclesReportBox";
+import CustomerTable from "@/components/customers/customerTable";
 interface User {
   email: string;
   role: string;
@@ -65,6 +66,12 @@ const HomePage = () => {
           <OfficeReportBox></OfficeReportBox>
           <VehicleReportBox></VehicleReportBox>
         </div>
+      </div>
+      <div className="bg-secondary-100 p-8 rounded-xl mb-3">
+        <h1 className="text-3xl text-gray-300 text-center uppercase tracking-[8px] font-bold">
+          Ultimos clientes <span className="text-primary">Registrados</span>{" "}
+        </h1>
+        <CustomerTable></CustomerTable>
       </div>
     </DashboardPage>
   );
