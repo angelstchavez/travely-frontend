@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Toaster, toast } from "sonner";
+import { FcOk } from "react-icons/fc";
 
 const CustomerCompanyForm = () => {
   const router = useRouter();
@@ -42,7 +44,7 @@ const CustomerCompanyForm = () => {
       return;
     }
 
-    router.push("/dashboard/home");
+    router.push("/dashboard/customers");
   };
 
   return (
@@ -135,11 +137,18 @@ const CustomerCompanyForm = () => {
           </div>
           <div className="flex items-center">
             <button
+              onClick={() => {
+                toast("Cliente empresarial registra exitosamente", {
+                  description: "Gracias por usar Travely Manager",
+                  icon: <FcOk />,
+                });
+              }}
               type="submit"
               className="bg-primary rounded-lg px-6 py-1 text-black font-semibold"
             >
               Registrar empresa
             </button>
+            <Toaster />
           </div>
         </form>
       </div>
