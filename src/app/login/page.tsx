@@ -45,8 +45,6 @@ const LoginPage = () => {
     await signIn("google", { redirect: false });
   };
 
-  console.log("Me estoy exitando");
-
   return (
     <>
       <div className="min-h-screen flex items-center justify-center ">
