@@ -15,6 +15,9 @@ import { useState } from "react";
 import DriverForm from "@/components/employees/drivers/driverForm";
 import DriverTable from "@/components/employees/drivers/driverTable";
 import DriverReport from "@/components/employees/drivers/driverReport";
+import SellerForm from "@/components/employees/sellers/sellerForm";
+import SellerTable from "@/components/employees/sellers/sellerTable";
+import SellerReport from "@/components/employees/sellers/sellerReport";
 
 interface TabProps {
   form: React.ReactNode;
@@ -39,9 +42,9 @@ const tabs: Record<string, TabProps> = {
     report: <AdminReport />,
   },
   vendedores: {
-    form: <AdminForm />,
-    table: <AdminTable />,
-    report: <AdminReport />,
+    form: <SellerForm />,
+    table: <SellerTable />,
+    report: <SellerReport />,
   },
   conductores: {
     form: <DriverForm />,
