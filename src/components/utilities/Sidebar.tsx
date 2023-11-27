@@ -65,7 +65,7 @@ const Sidebar = () => {
               >
                 <li>
                   <Link
-                    href="/dashboard/offices"
+                    href="/dashboard/travel-sales"
                     className=" py-3 px-4 border-l border-gray-500 ml-6 block
                                     relative before:absolute before:w-3 before:h-3 before:bg-primary before:rounded-full
                                     before:-left-[6px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary-100 hover:text-white transition-colors  
