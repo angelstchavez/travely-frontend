@@ -10,7 +10,7 @@ import {
 } from "react-icons/ri";
 import { useState } from "react";
 import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 const Sidebar = () => {
   const [showSubMenu, setShowSubMenu] = useState<boolean>();
